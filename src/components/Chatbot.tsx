@@ -19,6 +19,9 @@ const suggestedQuestions: SuggestedQuestion[] = [
   { id: '2', text: 'Give me a summary of today\'s top stories' },
   { id: '3', text: 'What\'s happening in technology news?' },
   { id: '4', text: 'Tell me about recent scientific breakthroughs' }
+  { id: '5', text: 'What are the recent trends in global economy?' },
+  { id: '6', text: 'Any updates on climate change?' },
+  { id: '7', text: 'What’s new in space exploration?' },
 ];
 
 const Chatbot = () => {
@@ -77,15 +80,21 @@ const Chatbot = () => {
     const lowerCaseMessage = userMessage.toLowerCase();
     
     if (lowerCaseMessage.includes('politics') || lowerCaseMessage.includes('election')) {
-      botResponse = "Recent political developments include ongoing debates about economic policies and international relations. According to reliable sources, the upcoming election is expected to focus on healthcare reform and climate initiatives.";
+      botResponse = "Recent political developments include ongoing debates about economic policies and international relations...";
     } else if (lowerCaseMessage.includes('technology') || lowerCaseMessage.includes('tech')) {
-      botResponse = "The technology sector is seeing significant advancements in artificial intelligence and quantum computing. Major tech companies have announced new initiatives to address privacy concerns and ethical AI development.";
+      botResponse = "The technology sector is seeing significant advancements in AI and quantum computing...";
     } else if (lowerCaseMessage.includes('science') || lowerCaseMessage.includes('research')) {
-      botResponse = "Recent scientific breakthroughs include promising results in cancer treatment research and renewable energy technologies. A peer-reviewed study published last week revealed new insights into climate change mitigation strategies.";
+      botResponse = "Recent scientific breakthroughs include promising results in cancer treatment and renewable energy...";
     } else if (lowerCaseMessage.includes('health') || lowerCaseMessage.includes('medical')) {
-      botResponse = "Health experts are reporting progress in vaccine development for several diseases. New public health guidelines emphasize preventative care and mental health awareness, based on extensive clinical research.";
+      botResponse = "Health experts are reporting progress in vaccine development for several diseases...";
     } else if (lowerCaseMessage.includes('today') || lowerCaseMessage.includes('latest')) {
-      botResponse = "Today's top stories include diplomatic talks between major nations, breakthroughs in sustainable technology, and updates on global health initiatives. All information has been verified through multiple reliable sources.";
+      botResponse = "Today's top stories include diplomatic talks, breakthroughs in technology, and global health updates...";
+    } else if (lowerCaseMessage.includes('economy')) {
+      botResponse = "Global economic trends show a gradual recovery with varying inflation rates and interest rate policies...";
+    } else if (lowerCaseMessage.includes('climate')) {
+      botResponse = "Climate change discussions focus on carbon neutrality goals and green energy transitions across nations...";
+    } else if (lowerCaseMessage.includes('space')) {
+      botResponse = "NASA and SpaceX continue exploration missions, with plans for lunar bases and Mars studies gaining traction...";
     } else {
       botResponse = "That's an interesting topic. Based on verified sources, this area has seen significant developments recently. Would you like me to provide more specific information or focus on particular aspects of this subject?";
     }
