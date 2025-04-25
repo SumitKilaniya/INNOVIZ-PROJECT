@@ -26,14 +26,17 @@ const FakeNewsDetector = () => {
     // Here we're simulating the analysis with a timeout and mock response
     setTimeout(() => {
       // This is just demo logic
-      const isFakeNews = newsText.toLowerCase().includes('miracle cure') || 
-                        newsText.toLowerCase().includes('conspiracy') ||
-                        newsText.toLowerCase().includes('shocking truth') ||
-                        Math.random() > 0.7; // Random element to demo both outcomes
+     const isFakeNews = newsText.toLowerCase().includes('miracle cure') || 
+                         newsText.toLowerCase().includes('conspiracy') ||
+                         newsText.toLowerCase().includes('shocking truth') ||
+                         newsText.toLowerCase().includes('exclusive') ||
+                         newsText.toLowerCase().includes('urgent') ||
+                         newsText.toLowerCase().includes('you won\'t believe') ||
+                         Math.random() > 0.7; // Random element to demo both outcomes
       
       const mockResult: DetectionResult = {
         isFake: isFakeNews,
-        confidence: isFakeNews ? 92 : 85,
+      
         explanation: isFakeNews
           ? "This content contains sensationalist language and makes claims without citing credible sources. Several statements contradict established scientific consensus."
           : "The information appears to be factually accurate and aligns with reporting from multiple credible sources. The claims are supported by evidence and expert opinions.",
